@@ -19,3 +19,19 @@ img {
   max-width: 38rem;
   margin: 2rem auto;
 }
+
+.slide__list {
+  position: relative;
+}
+
+.slide__item {
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.slide__item--active {
+  opacity: 1;
+  pointer-events: initial;
+}
