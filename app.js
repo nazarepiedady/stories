@@ -12,6 +12,8 @@ class SlideStories {
 
     this.thumbs.forEach(item => item.classList.remove('active'));
     this.thumbs[index].classList.add('active');
+
+    this.changeAutomatically();
   }
 
   prev() {
@@ -39,6 +41,11 @@ class SlideStories {
   addThumbs() {
     this.items.forEach(() => this.thumb.innerHTML += `<span></span>`);
     this.thumbs = Array.from(this.thumb.children);
+  }
+
+  changeAutomatically() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(this.next, 5000);
   }
 
   init() {
