@@ -33,5 +33,6 @@ img {
 
 .slide__item--active {
   opacity: 1;
+  position: relative;
   pointer-events: initial;
 }
