@@ -2,20 +2,27 @@ class SlideStories {
   constructor(id) {
     this.$slide = document.querySelector(`[data-slide="${id}"]`);
     this.active = 0;
-    this.activeSlide(1);
     this.init();
   }
 
   activeSlide(index) {
     this.active = index;
-    this.items = this.$slide.querySelectorAll('.slide__item');
+    this.items.forEach(item => item.classList.remove('slide__item--active'));
     this.items[index].classList.add('slide__item--active');
   }
 
-  prev() {}
+  prev() {
+    if (this.active > 0)
+      this.activeSlide(this.active - 1);
+    else
+      this.activeSlide(this.items.length - 1);
+  }
 
   next() {
-    this.activeSlide(this.active + 1);
+    if (this.active < this.items.length - 1)
+      this.activeSlide(this.active + 1);
+    else
+      this.activeSlide(0);
   }
 
   addNavigation() {
@@ -29,6 +36,8 @@ class SlideStories {
   init() {
     this.next = this.next.bind(this);
     this.prev = this.prev.bind(this);
+    this.items = this.$slide.querySelectorAll('.slide__item');
+    this.activeSlide(0);
     this.addNavigation();
   }
 }
