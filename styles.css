@@ -14,3 +14,8 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.slide {
+  max-width: 38rem;
+  margin: 2rem auto;
+}
