@@ -9,6 +9,9 @@ class SlideStories {
     this.active = index;
     this.items.forEach(item => item.classList.remove('slide__item--active'));
     this.items[index].classList.add('slide__item--active');
+
+    this.thumbs.forEach(item => item.classList.remove('active'));
+    this.thumbs[index].classList.add('active');
   }
 
   prev() {

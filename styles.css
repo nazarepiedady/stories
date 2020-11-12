@@ -36,3 +36,20 @@ img {
   position: relative;
   pointer-events: initial;
 }
+
+.slide__thumb {
+  display: flex;
+}
+
+.slide__thumb > span {
+  flex: 1;
+  display: block;
+  height: .3rem;
+  margin:  .5rem;
+  border-radius: .3rem;
+  background-color:  tomato;
+}
+
+.slide__thumb > span.active {
+  background-color: cyan;
+}
